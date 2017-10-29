@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             if (data!!.hasExtra("result_ok")){
                 var qtyBought: Int = data.extras.get("result_ok").toString().toInt()
                 modifyStock(qtyBought)
-                Toast.makeText(this,"Cantidades compradas: $qtyBought",Toast.LENGTH_LONG).show()
+                Toast.makeText(this,"Haz comprado $qtyBought moviles",Toast.LENGTH_LONG).show()
                 sp_num_selection.adapter=modifySpinner(tv_stock.text.toString().toInt())
             }
         }else if (resultCode== Activity.RESULT_CANCELED && requestCode==SHOP_CART_ACT_ID){
