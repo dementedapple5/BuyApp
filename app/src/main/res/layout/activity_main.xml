@@ -20,28 +20,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="11dp"
+        android:layout_marginStart="35dp"
         android:layout_toEndOf="@+id/iv_android"
         android:text="Android"
         android:textSize="24sp" />
 
-    <EditText
-        android:id="@+id/et_qty_buy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_name"
-        android:layout_marginStart="14dp"
-        android:layout_toEndOf="@+id/tv_stock"
-        android:ems="3"
-        android:inputType="number" />
 
     <TextView
         android:id="@+id/tv_stock"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/et_qty_buy"
-        android:layout_alignBottom="@+id/et_qty_buy"
         android:layout_alignStart="@+id/tv_name"
+        android:layout_below="@+id/tv_name"
         android:text="25"
         android:textSize="18sp" />
 
@@ -51,8 +41,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="38dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="18dp"
+        android:layout_marginEnd="15dp"
         android:text="Buy" />
 
     <Button
@@ -61,14 +51,14 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/btn_buy"
         android:layout_alignBottom="@+id/btn_buy"
-        android:layout_alignEnd="@+id/tv_stock"
+        android:layout_toStartOf="@+id/tv_stock"
         android:text="Cancel" />
 
     <Spinner
         android:id="@+id/sp_num_selection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/tv_stock"
-        android:layout_marginStart="44dp"
-        android:layout_toEndOf="@+id/et_qty_buy" />
+        android:layout_below="@+id/tv_name"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/tv_stock" />
 </RelativeLayout>

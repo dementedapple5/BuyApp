@@ -4,8 +4,8 @@ import android.app.Activity
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
 import android.view.View
+import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class ShopCartActivity : AppCompatActivity(), View.OnClickListener {
@@ -27,16 +27,25 @@ class ShopCartActivity : AppCompatActivity(), View.OnClickListener {
         val bundle: Bundle = intent.extras
         val data = bundle.get("quantity")
         val stock = bundle.get("stock")
-        et_qty_buy.setText(data.toString())
-        tv_stock.text = stock.toString()
 
+        val adapter = ArrayAdapter<Int>(this,android.R.layout.simple_spinner_dropdown_item)
+        var i: Int = 1
+        for (i in i..stock.toString().toInt()){
+            adapter.add(i)
+        }
+
+        sp_num_selection.adapter = adapter
+        sp_num_selection.setSelection(data.toString().toInt()-1)
+
+        tv_stock.text = stock.toString()
     }
 
 
      fun finishForResult(result: Int) {
          if (result== Activity.RESULT_OK){
              var intentResult: Intent = Intent()
-             intentResult.putExtra("result_ok",et_qty_buy.text.toString().toInt())
+             var data = sp_num_selection.selectedItem.toString().toInt()
+             intentResult.putExtra("result_ok",data)
              setResult(result,intentResult)
              super.finish()
          }else{
