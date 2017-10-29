@@ -20,8 +20,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_marginStart="11dp"
         android:layout_toEndOf="@+id/iv_android"
-        android:text="Android" />
+        android:text="Android"
+        android:textSize="24sp" />
 
     <EditText
         android:id="@+id/et_qty_buy"
@@ -39,11 +41,12 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/et_qty_buy"
         android:layout_alignBottom="@+id/et_qty_buy"
-        android:layout_toEndOf="@+id/iv_android"
-        android:text="25" />
+        android:layout_alignStart="@+id/tv_name"
+        android:text="25"
+        android:textSize="18sp" />
 
     <Button
-        android:id="@+id/btn_send_buy_data"
+        android:id="@+id/btn_buy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -51,4 +54,21 @@
         android:layout_marginBottom="38dp"
         android:layout_marginEnd="16dp"
         android:text="Buy" />
+
+    <Button
+        android:id="@+id/cancel_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btn_buy"
+        android:layout_alignBottom="@+id/btn_buy"
+        android:layout_alignEnd="@+id/tv_stock"
+        android:text="Cancel" />
+
+    <Spinner
+        android:id="@+id/sp_num_selection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/tv_stock"
+        android:layout_marginStart="44dp"
+        android:layout_toEndOf="@+id/et_qty_buy" />
 </RelativeLayout>

@@ -15,20 +15,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        btn_send_buy_data.setOnClickListener(this)
+        btn_buy.setOnClickListener(this)
+        cancel_btn.visibility = View.GONE
     }
 
     override fun onClick(p0: View?) {
         var data = et_qty_buy.text.toString().toInt()
         var stock = tv_stock.text.toString().toInt()
         when(p0?.id){
-            btn_send_buy_data.id -> {
+            btn_buy.id -> {
                 if (data in 1..stock){
                     val intent: Intent = Intent(this, ShopCartActivity::class.java)
                     intent.putExtra("quantity",data)
+                    intent.putExtra("stock",stock)
                     startActivityForResult(intent,SHOP_CART_ACT_ID)
                 }else{
-                    Toast.makeText(this,"Incorrect quantity",Toast.LENGTH_LONG).show()
+                    Toast.makeText(this,"Cantidad Incorrecta",Toast.LENGTH_LONG).show()
                 }
             }
         }
